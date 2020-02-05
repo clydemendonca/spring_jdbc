@@ -20,8 +20,8 @@ public class RestControllerTest {
 		ride.setName("New Ride");
 		ride.setDuration(100);
 		
-		restTemplate.put("http://localhost:8080/ride_tracker/rides", ride);
-		
+		ride = restTemplate.postForObject("http://localhost:8080/ride_tracker/rides", ride, Ride.class);
+		System.out.println("Ride Id: " + ride.getId());
 	}
 	
 	@Test(timeout=3000)
