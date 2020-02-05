@@ -17,7 +17,7 @@ public class RideController {
 	@Autowired
 	private RideService rideService;
 	
-	@RequestMapping(value = "/rides", method = RequestMethod.GET)
+	@RequestMapping(value = "rides", method = RequestMethod.GET)
 	public @ResponseBody List<Ride> getRides() {
 		return rideService.getRides();
 	}
