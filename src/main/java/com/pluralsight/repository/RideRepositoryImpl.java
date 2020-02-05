@@ -24,5 +24,12 @@ public class RideRepositoryImpl implements RideRepository {
 		rides.add(ride);
 		return rides;
 	}
+
+	@Override
+	public Ride createRide(Ride ride) {
+		// TODO Auto-generated method stub
+		jdbcTemplate.update("INSERT INTO ride(name, duration) VALUES(?,?);", ride.getName(), ride.getDuration());
+		return ride;
+	}
 	
 }
